@@ -53,7 +53,7 @@ USERS = [
         'price_range': '-1000',
         'price_range_591': '_1000$',
         'telegram_chat_id': [549970579],
-        'line_chat_id': ['AooktNKFxH7mPGSRSXGUj5tmf2KWpvVndXjxjQQa0xl'],
+        'line_chat_id': ['kp0BbSA4CpfxIMWcMBKPAeV5r8Rb5idgc3aRXd5AK3Y'],
         'keywords': ['租', '套']
     }
     , {
@@ -63,7 +63,7 @@ USERS = [
         'price_range': '800-2000',
         'price_range_591': '1000$_2000$',
         'telegram_chat_id': [549970579, 1133348584],
-        'line_chat_id': ['AooktNKFxH7mPGSRSXGUj5tmf2KWpvVndXjxjQQa0xl']
+        'line_chat_id': ['kp0BbSA4CpfxIMWcMBKPAeV5r8Rb5idgc3aRXd5AK3Y']
     }
     , {
         'user_name': 'michael',
