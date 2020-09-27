@@ -272,6 +272,7 @@ def main():
     """
     主程序進入點
     """
+    send_msg_to_user(ADMIN_LINE_ID, '任務開始')
     start_time = datetime.now()
     for user in USERS:
         user_name = user['user_name']
