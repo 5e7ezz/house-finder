@@ -19,96 +19,49 @@ ADMIN_LINE_ID = 'AooktNKFxH7mPGSRSXGUj5tmf2KWpvVndXjxjQQa0xl'
 DATABASE = './houses.db'
 USERS = [
     {
-        'user_name': 'lili',
+        'user_name': 'chantal',
+        'county': '台北市',
+        'district': '北投區',
+        'price_range': '400-700',
+        'price_range_591': '400$_700$',
+        'telegram_chat_id': [],
+        'line_chat_id': ['CoC6VJOCqxL5Lq1dJlYDc6YQONWC3oAOp7V6V1tbRpG'],
+    },
+    {
+        'user_name': 'chantal',
+        'county': '新北市',
+        'district': '淡水區',
+        'price_range': '400-700',
+        'price_range_591': '400$_700$',
+        'telegram_chat_id': [],
+        'line_chat_id': ['CoC6VJOCqxL5Lq1dJlYDc6YQONWC3oAOp7V6V1tbRpG'],
+    },
+    {
+        'user_name': 'chantal',
         'county': '新北市',
         'district': '三重區',
-        'price_range': '800-1000',
-        'price_range_591': '800$_1000$',
+        'price_range': '400-700',
+        'price_range_591': '400$_700$',
         'telegram_chat_id': [],
-        'line_chat_id': ['MiJ2KmO0VPEB4UOWn2ocjIL1xom87lYxDTGfUKFKkeU '],
-    }
-    , {
-        'user_name': 'jessie',
+        'line_chat_id': ['CoC6VJOCqxL5Lq1dJlYDc6YQONWC3oAOp7V6V1tbRpG'],
+    },
+    {
+        'user_name': 'chantal',
         'county': '新北市',
         'district': '蘆洲區',
-        'price_range': '1500-2800',
-        'price_range_591': '1500$_2800$',
+        'price_range': '400-700',
+        'price_range_591': '400$_700$',
         'telegram_chat_id': [],
-        'line_chat_id': ['GqQIIW1Bfvrxtv6vVuzszNlkk47LFdycS3dT872Cni2'],
-    }
-    , {
-        'user_name': 'kevin',
+        'line_chat_id': ['CoC6VJOCqxL5Lq1dJlYDc6YQONWC3oAOp7V6V1tbRpG'],
+    },
+    {
+        'user_name': 'chantal',
         'county': '新北市',
-        'district': '林口區',
-        'price_range': '-1000',
-        'price_range_591': '_1000$',
-        'telegram_chat_id': [765968974],
-        'line_chat_id': [],
-        'keywords': ['租', '套']
-    }
-    , {
-        'user_name': 'james',
-        'county': '新北市',
-        'district': '三重區',
-        'price_range': '-1000',
-        'price_range_591': '_1000$',
-        'telegram_chat_id': [549970579],
-        'line_chat_id': ['kp0BbSA4CpfxIMWcMBKPAeV5r8Rb5idgc3aRXd5AK3Y'],
-        'keywords': ['租', '套']
-    }
-    , {
-        'user_name': 'james',
-        'county': '新北市',
-        'district': '三重區',
-        'price_range': '800-2000',
-        'price_range_591': '1000$_2000$',
-        'telegram_chat_id': [549970579, 1133348584],
-        'line_chat_id': ['kp0BbSA4CpfxIMWcMBKPAeV5r8Rb5idgc3aRXd5AK3Y']
-    }
-    , {
-        'user_name': 'michael',
-        'county': '新北市',
-        'district': '新店區',
-        'price_range': '1000-1500',
-        'price_range_591': '1000$_1500$',
-        'telegram_chat_id': [623417355],
-        'line_chat_id': ['wCsapOjDxtXrImCLvgJYBCAimB0rLShFC1B0eq6p0rC']
-    }
-    , {
-        'user_name': 'frank',
-        'county': '台北市',
-        'district': '大同區',
-        'price_range': '800-2000',
-        'price_range_591': '1000$_2000$',
-        'telegram_chat_id': [945978483],
-        'line_chat_id': list()
-    }
-    , {
-        'user_name': 'charles',
-        'county': '台北市',
-        'district': '文山區',
-        'price_range': '800-2000',
-        'price_range_591': '800$_2000$',
-        'telegram_chat_id': [849506711],
-        'line_chat_id': ['8w6KfBvujvuwLYvv9eQNMfZs56rTkNIu9DFUDKXqJSr']
-    }
-     ,{
-        'user_name': 'fiona',
-        'county': '台北市',
-        'district': ['萬華區', '中山區', '中正區', '大同區'],
-        'price_range': '2000-3500',
-        'price_range_591': '2000$_3500$',
+        'district': '新莊區',
+        'price_range': '400-700',
+        'price_range_591': '400$_700$',
         'telegram_chat_id': [],
-        'line_chat_id': ['ChNOb9SdMFFAzmOPgBCvXpMpwMOvnFKoHlI0EpDpaHr']
-    }
-    , {
-        'user_name': 'fiona',
-        'county': '新北市',
-        'district': '板橋區',
-        'price_range': '2000-3000',
-        'price_range_591': '2000$_3000$',
-        'telegram_chat_id': [],
-        'line_chat_id': ['ChNOb9SdMFFAzmOPgBCvXpMpwMOvnFKoHlI0EpDpaHr']
+        'line_chat_id': ['CoC6VJOCqxL5Lq1dJlYDc6YQONWC3oAOp7V6V1tbRpG'],
     }
 ]
 
@@ -263,7 +216,9 @@ def send_houses_to_line_user(user_id, houses):
     total = len(houses)
     progress = 1
     for house in houses:
-        response = send_house_to_line_user(user_id, house)
+        response = send_msg_to_user(user_id, house['link'])
+        time.sleep(5)
+        # response = send_house_to_line_user(user_id, house)
         print('[LINE]推送第{}/{}筆資料 - {}'.format(progress, total, response.status_code if response else 'Error'))
         progress += 1
 
@@ -272,7 +227,7 @@ def main():
     """
     主程序進入點
     """
-    send_msg_to_user(ADMIN_LINE_ID, '任務開始')
+    house_591.init_headers()
     start_time = datetime.now()
     for user in USERS:
         user_name = user['user_name']
@@ -284,7 +239,9 @@ def main():
         print('[INFO] 處理 {} - {} - {} - {}'.format(user_name, county, district, price_range))
         houses_detail = []
         print('[591] START - {}'.format(user_name))
-        houses_detail.extend(house_591.fetch_houses_from_591(user))
+        houses = house_591.fetch_houses_from_591(user)
+        if houses:
+            houses_detail.extend(house_591.fetch_houses_from_591(user))
         for telegram_id in user['telegram_chat_id']:
             send_houses_to_telegram_user(telegram_id, houses_detail)
         for line_id in user['line_chat_id']:

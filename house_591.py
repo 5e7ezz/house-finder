@@ -28,7 +28,7 @@ HEADERS = {
     'Referer': 'https://sale.591.com.tw/',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
-    'Cookie': ''
+    'Cookie': 'T591_TOKEN=f0a00265-b816-4385-a102-1474fd0350e4; tw591__privacy_agree=0; _ga=GA1.3.1366232960.1622701815; regionCookieId=3; user_index_role=2; _ga=GA1.4.1366232960.1622701815; _fbp=fb.2.1622702478156.768210220; user_browse_recent=a%3A5%3A%7Bi%3A0%3Ba%3A2%3A%7Bs%3A4%3A%22type%22%3Bi%3A2%3Bs%3A7%3A%22post_id%22%3Bi%3A9624409%3B%7Di%3A1%3Ba%3A2%3A%7Bs%3A4%3A%22type%22%3Bi%3A8%3Bs%3A7%3A%22post_id%22%3Bi%3A121805%3B%7Di%3A2%3Ba%3A2%3A%7Bs%3A4%3A%22type%22%3Bi%3A8%3Bs%3A7%3A%22post_id%22%3Bi%3A122124%3B%7Di%3A3%3Ba%3A2%3A%7Bs%3A4%3A%22type%22%3Bi%3A8%3Bs%3A7%3A%22post_id%22%3Bi%3A125583%3B%7Di%3A4%3Ba%3A2%3A%7Bs%3A4%3A%22type%22%3Bi%3A8%3Bs%3A7%3A%22post_id%22%3Bi%3A120318%3B%7D%7D; _fbc=fb.2.1627217686739.IwAR3a4jGZWwq2v6jJ_nplCysFEgRS46FdCeKXapXtr1r1YHr0spTKrjKvnuo; webp=1; PHPSESSID=b4pc0cd74o7t70bugj6rc5jb11; bid[pc][114.32.179.6]=3228; is_new_index=1; is_new_index_redirect=1; urlJumpIp=3; index_keyword_search_analysis=%7B%22role%22%3A%222%22%2C%22type%22%3A%221%22%2C%22keyword%22%3A%22%22%2C%22selectKeyword%22%3A%22%E4%B8%89%E9%87%8D%E5%8D%80%22%2C%22menu%22%3A%22%22%2C%22hasHistory%22%3A1%2C%22hasPrompt%22%3A0%2C%22history%22%3A0%7D; newUI=1; urlJumpIpByTxt=%E6%96%B0%E5%8C%97%E5%B8%82; new_rent_list_kind_test=0; XSRF-TOKEN=eyJpdiI6IlNUSENMRENRbWV1WlhCSDdiZWJJa1E9PSIsInZhbHVlIjoiZUpabUVLY2lWRFBJUkx2MTBWRDVNbUZYaytTSmhDMmlWMjhTRUJiVjNGaVNXMmRoUmhLWmN5TEQ4TEJYTXdGejRTNU1RUm9kTHN4dHpVdnhRZkZxOVE9PSIsIm1hYyI6IjViMTQ5NThmOTQ0MGJlZGIxZTljYzk0NDc4M2M4MmRjODVmMmZkNTcwMWJhZjViMzk0ZWRhODgxNDc3NDA1Y2UifQ%3D%3D; 591_new_session=eyJpdiI6InNpUmpDTGpoNE9lXC90YlwvSWlUTXg4Zz09IiwidmFsdWUiOiJ2UnNYOHVsZnJXXC9GVzdER1BjSmlXYTM3RVJJM2dcLzkxSHg4VFwvbXpIUXFvbWQwZUNPWHI1TEdjMFlTV0ZVeFFSVDNOQndLdnlyQmdNXC9cL1wvTFNOdmNEQT09IiwibWFjIjoiYjk3NDgyOGNjMmE2YTNkYzQ4Y2Q2N2M4NGE5MjliYTlkYzUzOWRmMDQ3NmNkZGFmOTNiMWY1ODRmYTRlMWQ0OSJ9'
 }
 
 PAGE_COUNT = 5
@@ -63,7 +63,7 @@ def init_headers():
         driver.get('https://sale.591.com.tw/')
         driver.set_page_load_timeout(wait)
         driver.implicitly_wait(wait)
-        time.sleep(wait)
+        time.sleep(5)
         now_time = time.strftime('%Y%m%d %H:%M:%S')
         driver.get_screenshot_as_file(
             './screenshots/{time} - list_error.png'.format(time=now_time))
@@ -74,12 +74,16 @@ def init_headers():
         HEADERS['Cookie'] = '591_new_session={}'.format(
             driver.get_cookie('591_new_session')['value'])
         print('[591] csrf_value = {}'.format(csrf_value))
-    finally:
-        driver.close()
+        driver.close
+    except Exception as e:
+        HEADERS['X-CSRF-TOKEN'] = ""
+        HEADERS['Cookie'] = ""
 
 
 def fetch_houses_from_591(user):
-    init_headers()
+    if HEADERS['X-CSRF-TOKEN'] == "":
+        print('[591] HEADER 獲取失敗，結束任務')
+        return
     county = user['county']
     district = user['district']
     price = user['price_range_591']
